@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 20160614182458) do
   create_table "repositories", force: :cascade do |t|
     t.string   "name"
     t.date     "creation_date"
+    t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_repositories_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

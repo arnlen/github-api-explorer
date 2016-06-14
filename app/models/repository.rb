@@ -10,16 +10,5 @@
 #
 
 class Repository < ApplicationRecord
-  subject { build(:repository) }
-
-  describe 'validations' do
-    it { is_expected.to be_valid }
-
-    it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_presence_of(:creation_date) }
-  end
-
-  describe 'associations' do
-    it { is_expected.to have_many(:repositories) }
-  end
+  validates :name, :creation_date, presence: true
 end

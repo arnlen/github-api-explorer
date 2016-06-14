@@ -10,18 +10,8 @@
 #
 
 class User < ApplicationRecord
-  subject { build(:user) }
+  validates :username, :stars, presence: true
+  validates :username, uniqueness: true
 
-  describe 'validations' do
-    it { is_expected.to be_valid }
-
-    it { is_expected.to validate_presence_of(:username) }
-    it { is_expected.to validate_presence_of(:stars) }
-
-    it { is_expected.to validate_uniqueness_of(:username) }
-  end
-
-  describe 'associations' do
-    it { is_expected.to have_many(:repositories) }
-  end
+  has_many :repositories
 end
