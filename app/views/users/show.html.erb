@@ -1,1 +1,14 @@
-<h1>User</h1>
+<h1><%= @user.username %></h1>
+<p>
+  <%= pluralize(@user.stars, "star") %> - <%= pluralize(@repositories.count, "repository") %>
+</p>
+
+<h2>Repositories</h2>
+
+<ul>
+  <% @repositories.each do |repository| %>
+    <ol>
+      <%= repository.name %> (created on <%= repository.creation_date %>)
+    </ol>
+  <% end %>
+</ul>

@@ -1,1 +1,9 @@
 <h1>Known users</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= user.username %> (<%= pluralize(UserPresenter.new(user).repository_counter, "repository") %>)
+    </li>
+  <% end %>
+</ul>
