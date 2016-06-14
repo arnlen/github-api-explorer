@@ -3,17 +3,14 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
 
   describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
-    end
+    before { get :index }
+    it { expect(response).to have_http_status(:success) }
   end
 
   describe "GET #show" do
-    it "returns http success" do
-      get :show
-      expect(response).to have_http_status(:success)
-    end
+    let(:user) { create(:user) }
+    before { get :show, username: user.username }
+    it { expect(response).to have_http_status(:success) }
   end
 
 end

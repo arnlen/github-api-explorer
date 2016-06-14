@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root to: 'static_pages#home'
-  resources :user, only: %i(index show)
+
+  resources :users, only: %i(index create)
+  get '/users/:username', to: 'users#show'
 end
