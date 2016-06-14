@@ -15,7 +15,6 @@ group :development, :test do
   gem 'byebug',               '~> 9.0', platform: :mri          # Byebug is a Ruby 2 debugger.
   gem 'database_cleaner',     '~> 1.5'            # Strategies for cleaning databases. Can be used to ensure a clean state for testing.
   gem 'rspec-rails',          '~> 3.5.0.beta4'    # rspec-rails is a testing framework for Rails 3.x and 4.x.
-  gem 'guard-rails',          require: false      # Restart Rails when things change in your app
 end
 
 group :test do
