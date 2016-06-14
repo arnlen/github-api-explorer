@@ -17,6 +17,8 @@ class User < ApplicationRecord
 
     it { is_expected.to validate_presence_of(:username) }
     it { is_expected.to validate_presence_of(:stars) }
+
+    it { is_expected.to validate_uniqueness_of(:username) }
   end
 
   describe 'associations' do
