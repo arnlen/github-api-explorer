@@ -1,6 +1,6 @@
 <h1><%= @user.username %></h1>
 <p>
-  <%= pluralize(@user.stars, "star") %> - <%= pluralize(@repositories.count, "repository") %>
+  <%= pluralize(@user.followers, "follower") %> - <%= pluralize(@repositories.count, "repository") %>
 </p>
 
 <h2>Repositories</h2>
@@ -8,7 +8,7 @@
 <ul>
   <% @repositories.each do |repository| %>
     <ol>
-      <%= repository.name %> (created on <%= repository.creation_date %>)
+      <%= repository.name %> (<%= pluralize(repository.stars, "star") %>) - created on <%= repository.creation_date %>
     </ol>
   <% end %>
 </ul>
