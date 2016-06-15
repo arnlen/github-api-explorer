@@ -7,3 +7,6 @@ script:
 - bin/rake db:create
 - bin/rake db:test:prepare
 - bundle exec rspec
+addons:
+  code_climate:
+    repo_token: 09f8208373192dcd2c8c6f2b9eb93b49d89037807402f90d08608afdec88ab32
