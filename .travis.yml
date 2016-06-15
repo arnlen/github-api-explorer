@@ -6,4 +6,4 @@ env:
 script:
 - bin/rake db:create
 - bin/rake db:test:prepare
-- rspec
+- bundle exec rspec
