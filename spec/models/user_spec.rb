@@ -4,9 +4,9 @@
 #
 #  id         :integer          not null, primary key
 #  username   :string
-#  stars      :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  followers  :integer
 #
 
 require 'rails_helper'
@@ -18,7 +18,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to be_valid }
 
     it { is_expected.to validate_presence_of(:username) }
-    it { is_expected.to validate_presence_of(:stars) }
+    it { is_expected.to validate_presence_of(:followers) }
 
     it { is_expected.to validate_uniqueness_of(:username) }
   end
