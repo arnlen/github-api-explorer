@@ -29,6 +29,7 @@ group :test do
   gem 'capybara',             '~> 2.7'            # Capybara is an integration testing tool for rack based web applications. It simulates how a user would interact with a website
   gem 'poltergeist',          '~> 1.9'            # Poltergeist is a driver for Capybara that allows you to run your tests on a headless WebKit browser, provided by PhantomJS.
   gem 'phantomjs',            '~> 2.1.1', require: 'phantomjs/poltergeist'
+  gem 'rails-controller-testing', '~> 0.1'        # Brings back `assigns` and `assert_template` to your Rails tests https://github.com/rails/rails-controller-testing
 end
 
 group :development do
