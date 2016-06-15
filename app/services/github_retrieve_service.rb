@@ -6,8 +6,8 @@ class GithubRetrieveService
 
   def retrieve_user
     user_resource = get_resource
-    if User.find_by(username: @username)
-      return GithubSyncService.new(@username).synchronize_user_with(user_resource)
+    if user = User.find_by(username: @username)
+      return GithubSyncService.new(user).synchronize_user_with(user_resource)
     end
 
     User.create(username: @username, followers: user_resource.followers).tap do |user|
@@ -23,6 +23,7 @@ class GithubRetrieveService
     Octokit.user(@username)
   end
 
+  # DUPLICATION (Arnaud Lenglet): duplicated in GithubSyncService
   def get_repos_for(user_resource)
     user_resource.rels[:repos].get.data
   end
