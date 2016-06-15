@@ -56,7 +56,7 @@ RSpec.describe GithubRetrieveService do
       end
 
       context "and the user exists in our DB" do
-        let(:service) { double synchronize_user: user }
+        let(:service) { double synchronize_user_with: user }
 
         before do
           allow(User).to receive(:find_by).and_return(user)
@@ -64,7 +64,7 @@ RSpec.describe GithubRetrieveService do
           @result = subject.retrieve_user
         end
 
-        it { expect(service).to have_received(:synchronize_user) }
+        it { expect(service).to have_received(:synchronize_user_with).with(resource) }
         it { expect(@result).to eq(user) }
       end
     end
