@@ -30,6 +30,8 @@ group :test do
   gem 'poltergeist',          '~> 1.9'            # Poltergeist is a driver for Capybara that allows you to run your tests on a headless WebKit browser, provided by PhantomJS.
   gem 'phantomjs',            '~> 2.1.1', require: 'phantomjs/poltergeist'
   gem 'rails-controller-testing', '~> 0.1'        # Brings back `assigns` and `assert_template` to your Rails tests https://github.com/rails/rails-controller-testing
+  gem 'vcr',                  '~> 3.0'            # Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests.
+  gem 'webmock',              '~> 2.1'            # Library for stubbing and setting expectations on HTTP requests in Ruby.
 end
 
 group :development do

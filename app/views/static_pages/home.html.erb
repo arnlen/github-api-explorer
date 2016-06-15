@@ -1,8 +1,12 @@
 <h1>Home</h1>
 <p>Feel free to search a GitHub user.</p>
 
-<%= form_tag(users_path) %>
+<% if flash[:error] %>
+  <div class="error"><%= flash[:error] %></div>
+<% end %>
+
+<%= form_tag(users_path) do %>
   <%= label_tag('username') %>
-  <%= text_field_tag('username', placeholder: "GitHub username") %>
+  <%= text_field_tag('username', nil, placeholder: "GitHub username") %>
   <%= submit_tag('Search') %>
 <% end %>

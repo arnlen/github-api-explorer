@@ -30,7 +30,7 @@ class GithubRetrieveService
 
   def create_repository_from_attributes(repo_attributes, user)
     Repository.create(name: repo_attributes[:name],
-                      creation_date: Date.parse(repo_attributes[:created_at]),
+                      creation_date: repo_attributes[:created_at].to_date,
                       stars: repo_attributes[:stargazers_count],
                       user_id: user.id)
   end
