@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+- 2.2.5
+env:
+- RAILS_ENV=test
+script:
+- bin/rake db:create
+- bin/rake db:test:prepare
+- rspec
