@@ -5,7 +5,6 @@ env:
 - RAILS_ENV=test
 script:
 - bin/rake db:create
-- bin/rake db:migrate
 - bin/rake db:test:prepare
 - bundle exec rspec
 addons:
