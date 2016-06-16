@@ -1,37 +1,41 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  let(:user) { create(:user) }
 
   describe "GET #index" do
+    let!(:user_1) { create(:user) }
+    let!(:user_2) { create(:user, username: 'arnlen') }
     before { get :index }
     it do
       expect(response).to have_http_status(:success)
-      expect(assigns(:users)).to eq([user])
+      expect(assigns(:users)).to eq([user_2, user_1])
       expect(assigns(:users).first).to be_decorated_with(UserDecorator)
     end
   end
 
   describe "GET #show" do
+    let(:user) { create(:user) }
 
-    context "when user has at a repository" do
-      let(:repository) { create(:repository) }
+    context "when user doesn't have any repository" do
+      before { get :show, params: { username: user.username } }
+      it { expect(assigns(:repositories)).to eq([]) }
+    end
+
+    context "when user has at least one repository" do
+      let(:repository_1) { create(:repository) }
+      let(:repository_2) { create(:repository, creation_date: Date.yesterday) }
 
       before do
-        user.repositories << repository
+        user.repositories << repository_1
+        user.repositories << repository_2
         get :show, params: { username: user.username }
       end
 
       it do
         expect(response).to have_http_status(:success)
         expect(assigns(:user)).to eq(user)
-        expect(assigns(:repositories)).to eq([repository])
+        expect(assigns(:repositories)).to eq([repository_2, repository_1])
       end
-    end
-
-    context "when user doesn't have any repository" do
-      before { get :show, params: { username: user.username } }
-      it { expect(assigns(:repositories)).to eq([]) }
     end
   end
 
