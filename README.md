@@ -6,14 +6,15 @@ Search an user on the GitHub API and store the results locally.
 
 1. On the home page, enter a GitHub username in the search field.
 2. Look at the data. Those data are fetched from GitHub, and stored locally.
-3. You can stored data on the "Users" page.
+3. You can consult the stored data on the "Users" page.
 4. To refresh an user, simply search it again from the home page.
 
 Easy. :)
 
 ## Live demo
 
-The master branch of this repository is automagically deployed to Heroku.
+The master branch of this repository is automagically deployed to Heroku when Travis is green.
+
 You can test it here: [github-api-explorer.herokuapp.com](https://github-api-explorer.herokuapp.com/)
 
 ![](http://i.memecaptain.com/gend_images/jevOcA.gif)
