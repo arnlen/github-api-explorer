@@ -19,6 +19,24 @@ You can test it here: [github-api-explorer.herokuapp.com](https://github-api-exp
 
 ![](http://i.memecaptain.com/gend_images/jevOcA.gif)
 
+## Requirements
+
+- [Bundler](http://bundler.io/)
+- [PostgreSQL](https://www.postgresql.org/download/)
+
+## Getting started
+
+```
+git clone git@github.com:arnlen/github-api-explorer.git
+bundle
+bin/rake db:create
+bin/rake db:migrate
+bin/rake db:test:prepare
+rails s
+
+# => visit localhost:3000 and enjoy!
+```
+
 ## Caution: Rails 5 project
 
 This project relies on Rails 5.0.0.rc1. Please ensure your system complies with [Rails 5 requirements](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#upgrading-from-rails-4-2-to-rails-5-0).
