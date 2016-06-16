@@ -2,13 +2,6 @@
 
 Search an user on the GitHub API and store the results locally.
 
-## Live demo
-
-The master branch of this repository is automagically deployed to Heroku.
-You can test it here: [github-api-explorer.herokuapp.com](https://github-api-explorer.herokuapp.com/)
-
-![](https://m.popkey.co/a05fba/V0WNG.gif)
-
 ## Usage
 
 1. On the home page, enter a GitHub username in the search field.
@@ -18,10 +11,15 @@ You can test it here: [github-api-explorer.herokuapp.com](https://github-api-exp
 
 Easy. :)
 
+## Live demo
+
+The master branch of this repository is automagically deployed to Heroku.
+You can test it here: [github-api-explorer.herokuapp.com](https://github-api-explorer.herokuapp.com/)
+
+![](http://i.memecaptain.com/gend_images/jevOcA.gif)
+
 ## Caution: Rails 5 project
 
 This project relies on Rails 5.0.0.rc1. Please ensure your system complies with [Rails 5 requirements](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#upgrading-from-rails-4-2-to-rails-5-0).
 
 Since Rails 5 is - sadly - not yet released, this project can't be considered as production ready.
-
-![](http://cdn.naosalvo.com.br/2013/02/Neo-in-The-Matrix-Revolutions-the-matrix-22575620-570-300.gif)
